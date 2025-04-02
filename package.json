@@ -1,5 +1,16 @@
 {
   "dependencies": {
-    "express": "^4.21.2"
-  }
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "ws": "^8.18.1"
+  },
+  "scripts": {
+    "start": "node express.js",
+    "dev": "nodemon express.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "type": "module"
 }
