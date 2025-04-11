@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 //GET /stream route to support React Native TrackPlayer
 router.get("/stream", async (req, res) => {
     const ytUrl = req.query.url;
-
+    console.log(ytUrl)
     if (!ytUrl) {
         return res.status(400).json({ error: "Missing 'url' query param" });
     }
