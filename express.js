@@ -56,6 +56,6 @@ setInterval(() => {
 // });
 app.use("/api", router);
 const PORT = process.env.PORT || 80;
-server.listen(PORT, "0.0.0.0", () =>
+server.listen(PORT, "localhost", () =>
     console.log(`Server running on port ${PORT}`)
 );
