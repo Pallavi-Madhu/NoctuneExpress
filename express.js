@@ -54,7 +54,7 @@ setInterval(() => {
 //         client.send(JSON.stringify(payload));
 //     }
 // });
-app.use("/download", router);
+app.use("/api", router);
 const PORT = process.env.PORT || 80;
 server.listen(PORT, "0.0.0.0", () =>
     console.log(`Server running on port ${PORT}`)
