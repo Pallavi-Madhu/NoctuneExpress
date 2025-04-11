@@ -39,3 +39,27 @@ router.get("/stream", async (req, res) => {
         res.status(500).json({ error: "Failed to stream audio" });
     }
 });
+router.get("/metadata", async (req, res) => {
+    const ytUrl = req.query.url;
+
+    if (!ytUrl) {
+        return res.status(400).json({ error: "Missing 'url' query param" });
+    }
+
+    try {
+        console.log("getting metadata...")
+        const response = await axios.post("http://0.0.0.0:7000/yt/meta", {
+            data: ytUrl,
+        }, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        console.log(response.data);
+        res.status(200).json(response.data);
+    } catch (error) {
+        console.error("Metadata fetch error:", error.message);
+        res.status(500).json({ error: "Failed to fetch metadata" });
+    }
+});
+
